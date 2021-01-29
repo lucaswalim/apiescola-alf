@@ -1,24 +1,118 @@
-# Lumen PHP Framework
+# apiescola-alf
+### Escola- Alf API RESTFULL Construido em Php com microframework Lumen
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+- Características:
+  - De forma simples podemos cadastrar alunos, provas e gabaritos de alunos, corrigir provas retornando notas e média final.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+**Antes de iniciar precisamos seguir alguns passos rápidos.** 
 
-## Official Documentation
+1. Download do Php: [PHP](https://windows.php.net/download#php-7.3) -> Opção zip
+   - Extrair arquivo em uma pasta desejada.
+   - copiar o arquivo "php.ini-development" e colar na mesma pasta com nome "php.ini".
+   - abrir arquivo php.ini com editor de texto, buscar por nomes (Ctrl + f): "extension=pdo_sqlite" e "extension_dir", apagar o ";" do início.
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+- Após Instalar Php, precisamos adicionar o Php nas variaveis de ambiente.
+  - Menu Iniciar -> "adicionar as variaveis de ambiente do sistema" -> Variaveis de Ambiente -> Editar variavel Path -> Novo -> Colar o caminho da pasta onde o php foi extraido. 
 
-## Contributing
+2. Subindo Api via localhost:
+   - Menu iniciar cmd, navegar até a pasta do projeto, exemplo: cd/desktop/escola-alf
+   - Após acessar a pasta digitar : php -S localhost:8000 -t public
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-------------------------------------------------------------------------------------
 
-## Security Vulnerabilities
+3. Como usar?
+>Todos os dados serão repassados em formato JSON
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+- cadastrar Aluno
+```
+{
+  "nome": "Joao da Silva"
+}
+```
 
-## License
+- cadastrar Prova, limitando a somatória dos pesos das alternativas em 10
+```
+{
+    "gabarito": {
+   
+        "1":{
+            "alternativa": "a",
+            "peso": 1
+        },
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+        "2":{
+            "alternativa": "b",
+            "peso": 1
+        },
+
+        "3":{
+            "alternativa": "c",
+            "peso": 1
+        },
+
+        "4":{
+            "alternativa": "c",
+            "peso": 1
+        },
+
+        "5":{
+            "alternativa": "c",
+            "peso": 1
+        },
+
+        "6":{
+            "alternativa": "c",
+            "peso": 1
+        },
+
+        "7":{
+            "alternativa": "c",
+            "peso": 1
+        },
+
+        "8":{
+            "alternativa": "c",
+            "peso": 1
+        },
+
+        "9":{
+            "alternativa": "c",
+            "peso": 1
+        },
+
+        "10":{
+            "alternativa": "c",
+            "peso": 1
+        }
+    }
+}
+```
+
+- Cadastrar Gabarito do ALuno
+```
+{
+    "aluno_id": 1,
+    "prova_id": 1,
+    "gabarito_aluno": {    
+        "1":  "b",    
+        "2":  "d",
+        "3":  "c",
+        "4":  "e",
+        "5":  "c",
+        "6":  "e",
+        "7":  "b",
+        "8":  "c",  
+        "9":  "d",
+        "10": "a"
+    }
+}
+```
+
+4. Localizar no projeto
+ - Controllers : app -> http -> controllers
+ - Model : app -> models -> model
+
+
+
+
+
