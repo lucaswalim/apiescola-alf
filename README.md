@@ -6,10 +6,10 @@
 
 **Antes de iniciar precisamos seguir alguns passos rápidos.** 
 
-1. Download do Php: [PHP](https://windows.php.net/download#php-7.3) -> Opção zip
+1. Download do Php: [PHP](https://windows.php.net/download#php-7.4) -> Opção zip na versão 7.. Thread Safe
    - Extrair arquivo em uma pasta desejada.
-   - copiar o arquivo "php.ini-development" e colar na mesma pasta com nome "php.ini".
-   - abrir arquivo php.ini com editor de texto, buscar por nomes (Ctrl + f): "extension=pdo_sqlite" e "extension_dir", apagar o ";" do início.
+   - copiar o arquivo "php.ini-development" e colar na mesma pasta, renomando com o nome "php.ini".
+   - abrir arquivo php.ini com editor de texto, buscar por nomes (Ctrl + f): "extension=pdo_sqlite"(*proximo linha 935*  e "extension_dir"(*proximo linha 761*), apagar o ";" do início.
 
 - Após Instalar Php, precisamos adicionar o Php nas variaveis de ambiente.
   - Menu Iniciar -> "adicionar as variaveis de ambiente do sistema" -> Variaveis de Ambiente -> Editar variavel Path -> Novo -> Colar o caminho da pasta onde o php foi extraido. 
@@ -107,11 +107,33 @@
     }
 }
 ```
+4. Rotas da aplicação
+```
+GET  'api/alunos'  Listar alunos
+POST 'api/alunos'  Salvar Aluno
+POST 'api/alunos/{id}' Listar aluno
+PUT  'api/alunos/{id}',  Atualizar Aluno
+GET  'api/alunos/{id}/notas' Lista notas do Aluno
+GET  'api/alunos/aprovados', 
 
-4. Localizar no projeto
+GET  'api/provas' Listar provas
+POST 'api/provas' Salvar prova
+GET  'api/provas/{id}' Listar prova
+
+GET  'api/notas', Listar gabaritos com notas
+POST 'api/notas', Cadastra Gabarito do Aluno
+GET  'api/notas/{id}' 
+```
+
+5. Infraestrutura
+- Para facilitar utilizamos sqlite para evitar download de aplicativos terceiros
+
+6. Se Localizando no projeto
  - Controllers : app -> http -> controllers
  - Model : app -> models -> model
-
+ - Rotas : routes
+ 
+> Se você chegou até este ponto pode rodar os testes, utilizei POSTMAN , muito obrigado!
 
 
 
