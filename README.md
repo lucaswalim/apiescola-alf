@@ -1,6 +1,8 @@
 # apiescola-alf
 ### Escola- Alf API RESTFULL Construido em Php com microframework Lumen
 
+*Alterne de branch MAIN para MASTER*
+
 - Características:
   - De forma simples podemos cadastrar alunos, provas e gabaritos de alunos, corrigir provas retornando notas e média final.
 
